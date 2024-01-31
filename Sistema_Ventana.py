@@ -2,6 +2,7 @@ import sys
 from typing import Optional
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QVBoxLayout
+from PySide6.QtCore import QSize
 
 class Main_Label(QLabel):
     def __init__(self, texto):
@@ -22,6 +23,7 @@ class MainWindow(QWidget):
         Texto1 = Main_Label("Contenido nuevo: ")
         Horizontal = Posiciones(Texto1)
         self.setLayout(Horizontal)  # Establecer el layout de la ventana principal
+        self.setFixedSize(QSize(480, 320))
 
     def apply_custom_style(self):
         self.setStyleSheet('background-color: lightblue;')
